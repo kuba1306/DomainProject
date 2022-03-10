@@ -9,8 +9,8 @@ start chrome http://localhost:8080/crud/v1/tasks
 goto end
 
 :fail
-echo.0echo There were errors
+echo. echo There were errors
 
 :end
 echo.
-echo Work has finished
+echo Work has finished.
