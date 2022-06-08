@@ -3,10 +3,8 @@ package com.crud.tasks.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TrelloBoardDto {
+public class TrelloListDto {
 
     @JsonProperty("id")
     private String id;
@@ -14,28 +12,28 @@ public class TrelloBoardDto {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("lists")
-    private List<TrelloListDto> lists;
+    @JsonProperty("closed")
+    private boolean isClosed;
 
-    public TrelloBoardDto() {
+    public TrelloListDto() {
 
     }
 
-    public TrelloBoardDto(String id, String name, List<TrelloListDto> lists) {
+    public TrelloListDto(String id, String name, boolean isClosed) {
         this.id = id;
         this.name = name;
-        this.lists = lists;
-    }
-
-    public String getName() {
-        return name;
+        this.isClosed = isClosed;
     }
 
     public String getId() {
         return id;
     }
 
-    public List<TrelloListDto> getLists() {
-        return lists;
+    public String getName() {
+        return name;
+    }
+
+    public boolean isClosed() {
+        return isClosed;
     }
 }

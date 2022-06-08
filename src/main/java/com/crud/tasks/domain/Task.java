@@ -40,5 +40,4 @@ public class Task {
     public String getContent() {
         return content;
     }
-
 }
