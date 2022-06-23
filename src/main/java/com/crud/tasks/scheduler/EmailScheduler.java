@@ -4,6 +4,7 @@ import com.crud.tasks.config.AdminConfig;
 import com.crud.tasks.domain.Mail;
 import com.crud.tasks.repository.TaskRepository;
 import com.crud.tasks.service.SimpleEmailService;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,7 +22,7 @@ public class EmailScheduler {
         this.adminConfig = adminConfig;
     }
 
-    //@Scheduled(cron = "0 0 10 * * *")
+    @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
         String messageContent = createMessageContent();
         simpleEmailService.send(
